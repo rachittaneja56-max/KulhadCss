@@ -1,6 +1,6 @@
 {
   "name": "kulhadcss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Kadak utility-first CSS engine brewed with Vanilla JS.",
   "main": "src/index.js",
   "type": "module",
