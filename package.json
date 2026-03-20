@@ -1,13 +1,18 @@
 {
   "name": "kulhadcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Kadak utility-first CSS engine brewed with Vanilla JS.",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["css", "utility", "desi", "kulhad"],
+  "keywords": [
+    "css",
+    "utility",
+    "desi",
+    "kulhad"
+  ],
   "author": "Rachit",
   "license": "ISC"
 }
