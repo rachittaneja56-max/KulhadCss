@@ -1,59 +1,71 @@
-# KulhadCSS
+# 🏺 KulhadCSS
 
-KulhadCSS is a lightweight, utility-first CSS engine built with Vanilla JavaScript. It allows developers to apply styles using intuitive Indian terminology, which are parsed and injected into the DOM at runtime.
+A **Kadak** utility-first CSS engine brewed with pure Vanilla JS. 
 
-The engine eliminates the need for traditional CSS files or preprocessors for basic layout and spacing, providing a zero-dependency solution for modern web projects.
-
----
+Apply layout, spacing, and styling beautifully using intuitive Indian terminology! KulhadCSS traverses your DOM, parsing classnames like `malai-10` and `ghumaav-5` and rendering them instantly—without any CSS file or preprocessors.
 
 ## Installation
 
-Install the package via NPM:
-
+**Via NPM:**
 ```bash
 npm install kulhadcss
+```
 
-How It Works
-------------
+**Via CDN (JSDelivr) in browser:**
+```html
+<script type="module">
+  import { scanDom } from 'https://cdn.jsdelivr.net/npm/kulhadcss/src/index.js';
+</script>
+```
 
-KulhadCSS operates on a three-tier architecture:
+##  How It Works
 
-### 1. Parser
+KulhadCSS runs naturally in the browser without any bundler overhead:
+1. **Parser:** Deconstructs unique class names (e.g., `malai-10` into `padding: 40px`).
+2. **Applier:** Scans through the DOM elements and applies the generated inline styles to the `style` object directly.
+3. **Auto-Initialization:** It automatically listens to the `DOMContentLoaded` event, so all your styled elements are beautifully rendered once HTML is loaded.
 
-Deconstructs class names (e.g., malai-10) into valid CSS properties and calculated pixel values.
+## The Desi Dictionary
 
-### 2. Applier
-
-Traverses the DOM using document.querySelectorAll and applies generated styles directly via the style object.
-
-### 3. Auto-Initialization
-
-Listens for the DOMContentLoaded event to ensure all elements are styled once the HTML is ready.
-
-The Desi Dictionary
--------------------
-
-All dynamic utilities follow a base scale:
-
+All dynamic utilities in KulhadCSS follow a strict 4-pixel base scale:
 > **1 unit = 4px**
 
 ### Layout Utilities (Static)
 
-ClassCSS Property Description
-
-milkar display: flex; Initializes a flex container
-
-beech justify-content: center; align-items: center; Centers content in flex container
+| Class Name | CSS Property | Description |
+|---|---|---|
+| `milkar` | `display: flex;` | Initializes a flex container |
+| `beech` | `display: flex; justify-content: center; align-items: center;` | Perfectly centers the content |
 
 ### Spacing & Visual Utilities (Dynamic)
 
-Class Prefix CSSProperty Example Calculation
+| Class Prefix | CSS Property | Example | Calculation |
+|---|---|---|---|
+| `malai-{n}` | `padding` | `malai-4` | 4 × 4 = **16px** |
+| `doori-{n}` | `margin` | `doori-8` | 8 × 4 = **32px** |
+| `ghumaav-{n}` | `border-radius` | `ghumaav-5` | 5 × 4 = **20px** |
 
-malai padding malai-4 4 × 4 = 16px
+## Example Usage
 
-doori margin doori-8 8 × 4 = 32px ghumaav border-radius ghumaav-5 5 × 4 = 20px
+Here is a quick example showcasing how you can build UIs with KulhadCSS!
 
-License
--------
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KulhadCSS Demo</title>
+    <script type="module">
+        import { scanDom } from 'https://cdn.jsdelivr.net/npm/kulhadcss/src/index.js';
+    </script>
+</head>
+<body style="background: #fdf5e6; margin: 0; min-height: 100vh;" class="beech">
+    <div class="milkar beech malai-10 ghumaav-5" style="background: #8b4513; color: white;">
+        <h1 class="doori-2">🏺 KulhadCSS is Live!</h1>
+    </div>
+</body>
+</html>
+```
 
-ISC
+## License
+[ISC](https://opensource.org/licenses/ISC) © Rachit
