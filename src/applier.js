@@ -1,10 +1,10 @@
-import { parseClass } from './parser.js';
+import { parseKulhadClass } from './parser.js';
 
 export function applyStyles(element) {
     let element_classes = Array.from(element.classList);
     
     element_classes.forEach(cls => {
-        const styleObject = parseClass(cls);
+        const styleObject = parseKulhadClass(cls);
         if (styleObject) {
             Object.assign(element.style, styleObject);
         }

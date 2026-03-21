@@ -1,9 +1,17 @@
 import { scanDom } from './applier.js';
+
 if (typeof window !== 'undefined') {
-    
-    window.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver((mutations) => {
         scanDom();
-        console.log("KulhadCSS: Styles brewed successfully! 🏺☕");
-    });
+    })
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class']
+    })
+    scanDom();
+    console.log("KulhadCSS: Styles brewed successfully! 🏺☕");
+
 }
 export { scanDom };
